@@ -1,4 +1,4 @@
-RLJacking - A New Social Engineering Attack Vector
+QRLJacking - A New Social Engineering Attack Vector
 
 
 Find documentation in our Wiki.
