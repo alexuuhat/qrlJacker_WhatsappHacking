@@ -1,57 +1,67 @@
-QRLJacking - A New Social Engineering Attack Vector
+# qrlJacker_WhatsappHacking
 
+qrlJacker_WhatsappHacking is a tool based on [OWASP QRLJacking](https://github.com/OWASP/QRLJacking/tree/master/QRLJacker) that allows session hijacking of WhatsApp Web using QR code manipulation.
 
-Find documentation in our Wiki.
+## Installation
 
-What is QRLJacking?
-QRLJacking or Quick Response Code Login Jacking is a simple social engineering attack vector capable of session hijacking affecting all applications that rely on the “Login with QR code” feature as a secure way to login into accounts. In a nutshell, the victim scans the attacker’s QR code which results in session hijacking.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/alexuuhat/qrlJacker_WhatsappHacking.git
+   cd qrlJacker_WhatsappHacking
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the tool:
+   ```bash
+   python QrlJacker.py
+   ```
 
-Exploitation, Client Side Setup (Attacker's browser):
-Using QRLJacker - QRLJacking Exploitation Framework
+## Usage
 
-Demo Video:
-Attacking WhatsApp Web Application and performing a MITM attack to inject a bogus ad including WhatsApp QR Code. Demo Video
+Once inside the QrlJacker console, you can use the following commands:
 
-Technical Paper
-The technical paper clarifying everything about the QRLJacking attack vector can be found directly via our Wiki.
+### Basic Commands
+```
+QrlJacker> help       # Show available commands
+QrlJacker> banner     # Display the banner
+QrlJacker> list       # List available modules
+QrlJacker> info grabber/whatsapp  # Get information about the WhatsApp module
+```
 
-Vulnerable Web Applications and Services
-There are a lot of well-known web applications and services which were vulnerable to this attack until the date we wrote this paper. Here are some examples (that we have reported) including, but not limited to:
+### Exploiting WhatsApp Web
+```
+QrlJacker> use grabber/whatsapp  # Select the WhatsApp grabber module
+QrlJacker> options               # Show module options
+QrlJacker> set port 1337         # Set the port for the server
+QrlJacker> options               # Verify the configuration
+QrlJacker> run                   # Start capturing QR codes
+```
 
-Chat Applications:
-WhatsApp, WeChat, Line, Weibo, QQ Instant Messaging
+### Managing Sessions
+```
+[+] Got session on Whatsapp module
+> sessions        # List active sessions
+> sessions -h     # Show help for session management
+> sessions -i 1   # Interact with session ID 1
+```
 
-Mailing Services:
-QQ Mail (Personal and Business Corporate), Yandex Mail
+### Managing Jobs
+```
+> jobs            # Show running jobs
+> jobs -h         # Show help for job management
+> jobs -K         # Kill all running jobs
+```
 
-eCommerce:
-Alibaba, Aliexpress, Taobao, Tmall, 1688.com, Alimama, Taobao Trips
+## Documentation
 
-Online Banking:
-AliPay, Yandex Money, TenPay
+For full documentation and additional details, refer to the original [OWASP QRLJacking project](https://github.com/OWASP/QRLJacking/tree/master/QRLJacker).
 
-Passport Services “Critical”:
-Yandex Passport (Yandex Mail, Yandex Money, Yandex Maps, Yandex Videos, etc...)
+## Disclaimer
 
-Mobile Management Software:
-AirDroid
+This tool is intended for educational and research purposes only. Unauthorized access to accounts or services without permission is illegal and unethical. Use responsibly.
 
-Other Services:
-MyDigiPass, Zapper & Zapper WordPress Login by QR Code plugin, Trustly App, Yelophone, Alibaba Yunos
+---
 
-Author
-Mohamed Abdelbasset Elnouby (@SymbianSyMoh)
-
-Mohamed.Baset@OWASP.org
-
-Acknowledgements
-(List in no particular order)
-
-Mohamed Abdel Aty (@M_Aty)
-Mostafa Kassem (@Zanzofily)
-Karim Shoair (@D4Vinci)
-Abdelrahman Shawky (@ShawkyZ)
-Ahmed Elsobky (@0xSobky)
-Ahmed Abbas (@Fiberghost)
-Hiram Camarillo (@Hiramcoop)
-Juan Carlos Mejia (@Th3kr45h)
+**Author:** [alexuuhat](https://github.com/alexuuhat)
